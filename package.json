@@ -1,0 +1,20 @@
+{
+    "name": "CodeDevelopers-PWA",
+    "version": "0.0.1",
+    "description": "",
+    "keywords": "",
+    "license": "",
+    "author": "",
+    "scripts": {
+        "build": "parcel build index.html",
+        "dev": "parcel index.html --open",
+        "start": "npm run build && npm run dev",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "https": "http-server public -S -C localhost.crt -K localhost.key",
+        "http": "http-server public"
+    },
+    "devDependencies": {
+        "parcel-bundler": "^1.12.4",
+        "http-server": "latest"
+    }
+}

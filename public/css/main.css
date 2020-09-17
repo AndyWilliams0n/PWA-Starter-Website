@@ -1,0 +1,19 @@
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+.c-logo {
+    font-color: #fff;
+    font-size: 2.4rem !important;
+}
+
+.c-footer {
+    height: auto;
+}
+
+@media all and (display-mode: standalone) {
+    body {
+        background-color: #d35400;
+    }
+}

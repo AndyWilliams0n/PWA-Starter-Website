@@ -1,0 +1,20 @@
+{
+  "short_name": "PWA",
+  "name": "CodeDeveloper PWA",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }, {
+     "src": "icon-512.png",
+     "type": "image/png",
+     "sizes": "512x512"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#19191e",
+  "theme_color": "#d35400",
+  "orientation": "portrait",
+  "display": "standalone",
+  "gcm_sender_id": "my_gcm_sender_id",
+  "gcm_user_visible_only": true
+}

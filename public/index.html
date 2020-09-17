@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>CodeDeveloper PWA</title>
+    <meta name="description" content="PWA">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <meta name="theme-color" content="#fafafa">
+
+    <!-- Dark Theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/AndyWilliams0n/Styles-V2/codedeveloper-dark/css/css.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Add your site or application content here -->
+    <nav class="c-nav c-nav--fixed">
+        <a href="#" class="c-logo">PWA</a>
+        <a href="http://www.codedeveloper.co.uk" class="c-nav--link">CodeDeveloper Website</a>
+    </nav>
+
+    <div class="c-container">
+        <p>Welcome To Our PWA</p>
+
+        <img src="/img/unsplash-image.jpg" />
+    </div>
+
+    <footer class="c-footer">
+        <button id="AddToHome" style="display: none;" class="o-button u-margin--10">+ home</button>
+        <button id="EnablePush" style="display: inline-block;" class="o-button u-margin--10">+ notification</button>
+    </footer>
+
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+<!--    Google Analytics: change UA-XXXXX-Y to be your site's ID.-->
+    <script>
+        window.ga = function () {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('set', 'transport', 'beacon');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

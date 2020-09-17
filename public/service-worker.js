@@ -7,7 +7,9 @@ const resourcesToPrecache = [
     '/js/main.js',
     '/js/plugins.js',
     '/img/unsplash-image.jpg',
-    '/icon.png'
+    '/icon.png',
+    'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap',
+    'https://cdn.jsdelivr.net/gh/AndyWilliams0n/Styles-V2/codedeveloper-dark/css/css.css'
 ]
 
 self.addEventListener('install', event => {

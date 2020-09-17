@@ -7,7 +7,7 @@ const resourcesToPrecache = [
     '/js/main.js',
     '/js/plugins.js',
     '/img/unsplash-image.jpg',
-    '/img/push.svg'
+    '/icon.png'
 ]
 
 self.addEventListener('install', event => {
@@ -39,7 +39,7 @@ self.addEventListener('fetch', event => {
 self.addEventListener('push', event => {
     const title = 'Push Title';
     const body = 'Push Body';
-    const icon = '/img/push.svg';
+    const icon = 'icon.png';
     const tag = 'push-example-tag';
 
     event.waitUntil(

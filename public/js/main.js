@@ -56,6 +56,8 @@ function getSubscription(s) {
 
             enablePush.style.display = 'inline-block';
         }
+    }, error => {
+        console.log('ERROR SUBSCRIBING FOR PUSH');
     })
 }
 

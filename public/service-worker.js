@@ -39,7 +39,7 @@ self.addEventListener('fetch', event => {
 self.addEventListener('push', event => {
     const title = 'Push Title';
     const body = 'Push Body';
-    const icon = 'img/push.svg';
+    const icon = '/img/push.svg';
     const tag = 'push-example-tag';
 
     event.waitUntil(

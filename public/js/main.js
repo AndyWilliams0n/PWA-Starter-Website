@@ -6,38 +6,55 @@ console.log('WELCOME TO PWA');
 
 // Service Workers and PUSH
 
+let sw;
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(r => {
-            console.log('REGISTERED', r);
+        navigator.serviceWorker.register('/service-worker.js').then(event => {
+            console.log('REGISTERED', event);
 
-            setTimeout(() => isPushSupported(r), 1000)
+            sw = event;
+
+            setTimeout(() => isPushSupported(), 1000);
         }).catch(e => {
             console.log('NOT REGISTERED');
         });
     })
 }
 
-function isPushSupported(r) {
+
+
+// PUSH
+
+let enablePush = document.getElementById('EnablePush');
+let sendPush = document.getElementById('SendPush');
+
+enablePush.addEventListener('click', (event) => {
+    subscribeForPush(sw);
+});
+
+function isPushSupported() {
     if ('PushManager' in window) {
         console.log('PUSH SUPPORTED');
 
-        getSubscription(r);
+        getSubscription(sw);
     } else {
         console.log('PUSH NOT SUPPORTED');
     }
 }
 
-function getSubscription(r) {
-    r.pushManager.getSubscription().then(sub => {
+function getSubscription(s) {
+    s.pushManager.getSubscription().then(sub => {
         const isSub = !!sub;
 
         if (isSub) {
             console.log('SUBSCRIBED FOR PUSH');
+
+            enablePush.style.display = 'none';
+            sendPush.style.display = 'inline-block';
         } else {
             console.log('NOT SUBSCRIBED FOR PUSH');
 
-            subscribeForPush(r);
+            enablePush.style.display = 'inline-block';
         }
     })
 }
@@ -53,8 +70,24 @@ function subscribeForPush(r) {
         applicationServerKey: publicKey
     }).then(push => {
         console.log('SUBSCRIBED FOR PUSH', push);
+
+        enablePush.style.display = 'none';
+        sendPush.style.display = 'inline-block';
     })
 }
+
+sendPush.addEventListener('click', (event) => {
+    const title = 'Push Title';
+    const body = 'Push Body ' + new Date().toISOString();
+    const icon = 'icon.png';
+    const tag = 'push-example-tag' + new Date().toISOString();
+
+    sw.showNotification(title, {
+        body: body,
+        icon: icon,
+        tag: tag,
+    });
+});
 
 
 
